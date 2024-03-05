@@ -55,14 +55,8 @@ void main(){
 
       //printf("loss:%f\n", loss);
 
-      //if(target >= 0.5){
-         w1 = w1 + (lr * in * diffsigmoid(hl) * (w2 * diffsigmoid(ol)*loss));
-         w2 = w2 + (lr * ho * diffsigmoid(ol) * loss);
-      //}
-      //else{
-      //   w1 = w1 - (lr * in * diffsigmoid(hl) * (w2 * diffsigmoid(ol)*loss));
-      //   w2 = w2 - (lr * ho * diffsigmoid(ol) * loss);
-      //}
+      w1 = w1 + (lr * in * diffsigmoid(hl) * (w2 * diffsigmoid(ol)*loss));
+      w2 = w2 + (lr * ho * diffsigmoid(ol) * loss);
    }
    printf("w1:%f, w2:%f, output:%f\n", w1, w2, oo);
    printf("loss:%f\n", loss);
